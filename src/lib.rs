@@ -120,6 +120,7 @@ impl Build {
         }
 
         for file in &self.files {
+            println!("cargo:rerun-if-changed={:?}", file);
             cmd.arg(file);
         }
 
